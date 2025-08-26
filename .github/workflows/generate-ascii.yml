@@ -26,8 +26,9 @@ jobs:
     #       path: dragon.txt
 
   test_job_2:
+
     runs-on: ubuntu-latest
-    # needs: build_job_1
+    needs: build_job_1
     steps:
     #   - name: Download dragon.txt
     #     uses: actions/download-artifact@v4
@@ -42,7 +43,7 @@ jobs:
 
   deploy_job_3:
     runs-on: ubuntu-latest
-    # needs: test_job_2
+    needs: test_job_2
     steps:
     #   - name: Download dragon.txt
     #     uses: actions/download-artifact@v4
